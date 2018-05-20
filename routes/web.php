@@ -39,8 +39,8 @@ Route::get('/home', function () {
     return view('pages.user.home');
 })->name('home');
 
-Route::get('/home', function () {
-    return view('pages.user.home');
+Route::get('/home2', function () {
+    return view('pages.user.home2');
 })->name('home');
 
 Route::get('/cart', function () {
