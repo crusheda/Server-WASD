@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('pages.user.home');
+    return view('pages.user.track2');
+});
+Route::get('/order', function () {
+    return view('pages.user.order');
 });
 
 Route::get('/admin', 'admin\DashboardController@index')->name('dashboard');
