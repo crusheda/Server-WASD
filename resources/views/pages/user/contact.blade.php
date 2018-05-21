@@ -1,64 +1,69 @@
-@extends('layouts.user')
-@section('link')
-@endsection
+@extends('layouts.home')
 @section('content')
-	<section class="header_text sub">
-		<h4><span>Contact Us</span></h4>
-		<img class="pageBanner" src="themes/images/pageBanner.png" alt="New products" >
-	</section>
-	<section class="google_map">
-		<iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=74%2F6+Nguy%E1%BB%85n+V%C4%83n+Tho%E1%BA%A1i,+S%C6%A1n+Tr%C3%A0,+%C4%90%C3%A0+N%E1%BA%B5ng,+Vi%E1%BB%87t+Nam&amp;aq=0&amp;oq=74%2F6+Nguyen+Van+Thoai+Da+Nang,+Viet+Nam&amp;sll=37.0625,-95.677068&amp;sspn=41.546728,79.013672&amp;ie=UTF8&amp;hq=&amp;hnear=74+Nguy%E1%BB%85n+V%C4%83n+Tho%E1%BA%A1i,+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+Da+Nang,+Vietnam&amp;t=m&amp;ll=16.064537,108.24151&amp;spn=0.032992,0.039396&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
-	</section>
-	<section class="main-content">				
-		<div class="row">				
-			<div class="span5">
-				<div>
-					<h5>ADDITIONAL INFORMATION</h5>
-					<p><strong>Phone:</strong>&nbsp;+62823-7507-xxxx<br>
-					<strong>Fax:</strong>&nbsp;+62823-7507-xxxx<br>
-					<strong>Email:</strong>&nbsp;<a href="#">DaniFauzanNafiUlumHabibi@WASD.com</a>								
-					</p>
-					<br/>
-					<h5>SECONDARY OFFICE IN YOGYAKARTA</h5>
-					<p><strong>Phone:</strong>&nbsp;+62823-7507-xxxx<br>
-					<strong>Fax:</strong>&nbsp;+62823-7507-xxxx<br>
-					<strong>Email:</strong>&nbsp;<a href="#">DaniFauzanNafiUlumHabibi@WASD.com</a>					
-					</p>
-				</div>
-			</div>
-			<div class="span7">
-				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-				<form method="post" action="#">
-					<fieldset>
-						<div class="clearfix">
-							<label for="name"><span>Name:</span></label>
-							<div class="input">
-								<input tabindex="1" size="18" id="name" name="name" type="text" value="" class="input-xlarge" placeholder="Name">
-							</div>
-						</div>
-						
-						<div class="clearfix">
-							<label for="email"><span>Email:</span></label>
-							<div class="input">
-								<input tabindex="2" size="25" id="email" name="email" type="text" value="" class="input-xlarge" placeholder="Email Address">
-							</div>
-						</div>
-						
-						<div class="clearfix">
-							<label for="message"><span>Message:</span></label>
-							<div class="input">
-								<textarea tabindex="3" class="input-xlarge" id="message" name="body" rows="7" placeholder="Message"></textarea>
-							</div>
-						</div>
-						
-						<div class="actions">
-							<button tabindex="3" type="submit" class="btn btn-inverse">Send message</button>
-						</div>
-					</fieldset>
-				</form>
-			</div>				
-		</div>
-	</section>
-@endsection
-@section('jquery')
+    <div class="container">
+        <div class="row mt centered">
+            <div class="col-lg-6 col-lg-offset-3">
+                <br>
+                <h1>Contact</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <form action="">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" id="" placeholder="name@example.com" style="width:100%">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Nama Pemesan</label>
+                            <input type="text" class="form-control" id="" placeholder="Your Name" style="width:100%">
+                        </div>
+                    </div>  
+                </div>
+                
+                <div class="form-group">
+                    <textarea class="form-control" id="" placeholder="Your Problems..." style="width:100%"></textarea>
+                </div>
+                <center><button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button></center>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-lg-6">
+                    <center><h3>Location</h3></center>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.6433763121345!2d110.3945613142835!3d-7.827516994359732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5719869ac7a7%3A0x632c7a81a43e4e4d!2sWASD+Clothing!5e0!3m2!1sid!2sid!4v1526928838639" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+                </div>
+                <div class="col-lg-6">
+                    <center><h3>Contact Person</h3></center>
+                    <div class="thumbnail">
+                        <p>
+                            <strong>Phone:</strong>&nbsp;+62823-7507-xxxx<br>
+                            <strong>Fax:</strong>&nbsp;+62823-7507-xxxx<br>
+                            <strong>Email:</strong>&nbsp;<a href="#">KNTL@WASD.com</a>					
+                        </p>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="col-lg-6">
+                    <div class="thumbnail">
+                        <p>
+                            <strong>Phone:</strong>&nbsp;+62823-7507-xxxx<br>
+                            <strong>Fax:</strong>&nbsp;+62823-7507-xxxx<br>
+                            <strong>Email:</strong>&nbsp;<a href="#">JNCK@WASD.com</a>					
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 @endsection

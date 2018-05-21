@@ -12,11 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('pages.user.track2');
-});
+    return view('pages.user.track');
+})->name('track');
+
 Route::get('/order', function () {
     return view('pages.user.order');
 });
+
+Route::get('/contact', function () {
+    return view('pages.user.contact');
+})->name('contact');
 
 Route::get('/admin', 'admin\DashboardController@index')->name('dashboard');
 Route::get('/admin/order', 'admin\OrderController@index')->name('order');
@@ -66,6 +71,3 @@ Route::get('/productdetail', function () {
     return view('pages.user.productdetail');
 })->name('productdetail');
 
-Route::get('/contact', function () {
-    return view('pages.user.contact');
-})->name('contact');

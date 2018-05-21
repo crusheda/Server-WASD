@@ -22,9 +22,7 @@
     <div class="row mt">
         <div class="col-lg-3">                               
             <div class="thumbnail">
-                <div class="jumbotron">
-                    <img src="{{ url('/img/iconwasd.png') }}" width="150" alt="">
-                </div>
+                    <img src="{{ url('/img/img_produk.jpg') }}" width="150" height="350" alt="">
                 <div class="caption">
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
@@ -39,7 +37,9 @@
                         <div class="col-lg-6">
                            <b>Dateline :</b> <br> 22/10/2010, 22:00 WIB
                         </div>
-                    </div>                    
+                    </div> 
+                    <hr>
+                    <button class="btn btn-primary" style="pointer-events: none;width:100%" type="button" disabled>ON PROGRESS</button>                                      
                 </div>
             </div>            
         </div>
@@ -49,7 +49,7 @@
                 <div class="caption">
                 <center><h4>Detail Order</h4></center>
                 <hr>
-                <table class="table table-hover">
+                <table class="table table-hover" style="text-align:center">
                     <thead>
                         <tr>
                             <th>Bahan</th>

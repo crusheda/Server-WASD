@@ -50,9 +50,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="{{ route('contact') }}">Contact Person</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
