@@ -3,6 +3,7 @@
 <div class="container">
     <div class="row mt centered">
         <div class="col-lg-6 col-lg-offset-3">
+            <br>
             <h1>Tracking Your Order</h1>
             <h4>Your Order with Tracking Number : <a href="">999999</a></h4>
         </div>
@@ -10,38 +11,97 @@
     
     <hr>
     
-    <div class="row mt centered">
-        <div class="col-lg-4">
-            <div class="jumbotron">
-                <img src="{{ url('img/ser02.png') }}" width="180" alt="">
-                <h4>1 - Order</h4>
-                <p>Lorem Ipsum is simply dummy</p>
-            </div>
-        </div>
-
-        <div class="col-lg-4">
-            <div class="jumbotron">
-                <img src="{{ url('img/ser02.png') }}" width="180" alt="">
-                <h4>2 - Resource</h4>
-                <p>Lorem Ipsum is simply dummy</p>
-            </div>
-        </div>
-
-        <div class="col-lg-4">
-            <div class="jumbotron">
-                <img src="{{ url('img/ser02.png') }}" width="180" alt="">
-                <h4>3 - Shipping</h4>
-                <p>Lorem Ipsum is simply dummy</p>
-            </div>
-        </div>
-    </div>
-    
-    <hr>
-
-    <div class="row mt centered">
+    {{-- <div class="row mt centered">
         <div class="col-lg-12">
-            <div class="jumbotron">
-                    <p>asdasdasdas</p>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+        </div>
+    </div> --}}
+
+    <div class="row mt">
+        <div class="col-lg-3">                               
+            <div class="thumbnail">
+                <div class="jumbotron">
+                    <img src="{{ url('/img/iconwasd.png') }}" width="150" alt="">
+                </div>
+                <div class="caption">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                            60%
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mt centered">
+                        <div class="col-lg-6">
+                           <b>Pemesan :</b> <br> Suroto
+                        </div>
+                        <div class="col-lg-6">
+                           <b>Dateline :</b> <br> 22/10/2010, 22:00 WIB
+                        </div>
+                    </div>                    
+                </div>
+            </div>            
+        </div>
+
+        <div class="col-lg-9">
+            <div class="thumbnail">
+                <div class="caption">
+                <center><h4>Detail Order</h4></center>
+                <hr>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Bahan</th>
+                            <th>Potong</th>
+                            <th>Sablon</th>
+                            <th>Jahit</th>
+                            <th>Press</th>
+                            <th>Finishing</th>
+                            <th>Quality Control</th>    
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" value="" disabled>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="" value="" disabled>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="" value="" disabled>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="" value="" disabled>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="" value="" disabled>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="" value="" disabled>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="" value="" disabled>
+                            </td>                                                    
+                        </tr>
+                    </tbody>     
+                </table>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="col-lg-9">
+            <div class="thumbnail">
+                <div class="caption">
+                <center><h4>Keterangan Pesanan</h4></center>
+                <hr>
+                    <div class="form-group">
+                        <textarea style="width:100%" class="form-control" id="" rows="3" disabled></textarea>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

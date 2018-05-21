@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="{{ url('uitrack/img/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('/img/iconwasd.png') }}">
 
 		<title>Tracking Order - WASD</title>
 		
@@ -46,11 +46,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><b>WASD.</b></a>
+          <a class="navbar-brand" href="#"><b><img src="{{ url('/img/iconwasd.png') }}"> WASD.</b></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">meh diganti opo sak2mu? LOGIN???</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
