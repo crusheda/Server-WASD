@@ -95,7 +95,7 @@
               <li>
                 <a href="{{ route('jenis_barang.index') }}" class="waves-effect"><i class="fa fa-cubes m-r-10" aria-hidden="true"></i>Jenis Barang</a>
               </li> --}}
-              <center><button class="btn btn-warning" href="" style="bottom:0%;width:150px">Logout</button></center>
+              <center><button class="btn btn-warning" href="{{ url('/logout') }}" style="bottom:0%;width:150px">Logout</button></center>
             </ul>              
           </nav>
           <!-- End Sidebar navigation -->

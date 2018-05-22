@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('pages.user.track');
 })->name('track');
 
+Route::get('/admin/login', function (){
+    return view('pages.admin.login');
+})->name('adminlogin');
+
 Route::get('/order', function () {
     return view('pages.user.order');
 });
@@ -23,12 +27,16 @@ Route::get('/contact', function () {
     return view('pages.user.contact');
 })->name('contact');
 
+//Function GET
 Route::get('/admin', 'admin\DashboardController@index')->name('dashboard');
 Route::get('/admin/order', 'OrderController@index')->name('tambahorder');
+Route::get('/logout', 'admin\DashboardController@logout')->name('logout');
+// Route::get('/order', 'OrderController@detail');
 
-// Function
+// Function POST
 Route::post('/order', 'OrderController@store');
-
+Route::post('/admin/login', 'LoginAdminController@index');
+Route::post('/', 'OrderController@detail');
 //Editable
 
 // Route::get('/admin/transaksi', 'admin\LaporanTransaksiController@index')->name('transaksi');
@@ -36,9 +44,7 @@ Route::post('/order', 'OrderController@store');
 // Route::resource('admin/jenis_barang', 'admin\JenisBarangController');
 // Route::resource('admin/barang', 'admin\BarangController');
 
-// Route::get('/admin/login', function (){
-//     return view('pages.admin.login');
-// })->name('adminlogin');
+
 
 // Route::post('/loginadmin', 'LoginAdminController@index');
 // Route::post('/transaksi', 'TransaksiController@store');

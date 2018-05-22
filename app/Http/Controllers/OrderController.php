@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Order;
 use Response;
 
@@ -44,7 +45,26 @@ class OrderController extends Controller
         $this->sendResponse(['bahan' => $data->bahan], 'bahan update successfully');
     }
 
+    public function detail(Request $request)
+    {
+        $data = Order::find($request->id);        
+        if($data->id = intval($request->kodetrack))
+        {
+            return redirect('/order');
+        }
+        else {
+            return redirect('/');
+        }
+    }
 
+    // $data = JenisBarang::find($id);
+    // $data->nama = $request->nama;
 
-
+    public function done($id)
+    {
+        $data = JenisBarang::find($id);
+        $data->delete();
+        
+        return redirect('/admin/jenis_barang');
+    }
 }

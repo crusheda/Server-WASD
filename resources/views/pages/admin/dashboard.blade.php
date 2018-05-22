@@ -134,6 +134,7 @@
                     @endif --}}
                 </tbody>
             </table>
+            <a href="{{ url('logout') }}">TESTING</a>
           </div>
         </div>
       </div>
