@@ -46,7 +46,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><b><img src="{{ url('/img/iconwasd.png') }}"> WASD.</b></a>
+          <a class="navbar-brand" href="{{ route('track') }}"><b><img src="{{ url('/img/iconwasd.png') }}"> WASD.</b></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -62,7 +62,7 @@
         <div class="container">            
             <div class="copy text-center">
                 <hr>
-                <span><p class="centered">&copy; Copyright 2018 - All right reserved.</p></span> 
+                <span><p class="centered">&copy; Copyright 2018 - WASD Cloth</p></span> 
             </div>		
         </div>
     </footer>

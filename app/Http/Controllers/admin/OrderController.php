@@ -11,7 +11,7 @@ class OrderController extends Controller
     public function index()
     {
         // $data = Barang::with(['jenisbarang'])->orderBy('id', 'ASC')->get();
-        return view('pages.admin.order');
+        return view('pages.admin.tambahorder');
         // ->with('barangs', $data)
     }
 }

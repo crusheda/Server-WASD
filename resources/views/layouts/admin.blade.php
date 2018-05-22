@@ -81,9 +81,9 @@
                 <a href="{{ route('dashboard') }}" class="waves-effect"><i class="fa fa-clock-o m-r-10" aria-hidden="true"></i>Dashboard</a>
               </li>
               <li>
-                <a href="{{ route('order') }}" class="waves-effect"><i class="fa fa-cloud-upload m-r-10" aria-hidden="true"></i>Order</a>
+                <a href="{{ route('tambahorder') }}" class="waves-effect"><i class="fa fa-cloud-upload m-r-10" aria-hidden="true"></i>Tambah Pesanan</a>
               </li>
-              <li>
+              {{-- <li>
                 <a href="{{ route('laporan') }}" class="waves-effect"><i class="fa fa-shopping-cart m-r-10" aria-hidden="true"></i>Laporan Pesanan</a>
               </li>
               <li>
@@ -94,7 +94,8 @@
               </li>
               <li>
                 <a href="{{ route('jenis_barang.index') }}" class="waves-effect"><i class="fa fa-cubes m-r-10" aria-hidden="true"></i>Jenis Barang</a>
-              </li>
+              </li> --}}
+              <center><button class="btn btn-warning" href="" style="bottom:0%;width:150px">Logout</button></center>
             </ul>              
           </nav>
           <!-- End Sidebar navigation -->
@@ -115,7 +116,7 @@
           @yield('content')
         </div>
         <footer class="footer text-center">
-          © 2018 WASD Cloth wasdclothing.com
+          © 2018 WASD Cloth
         </footer>
       </div>
     </div>

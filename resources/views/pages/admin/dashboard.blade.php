@@ -10,14 +10,9 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-block">
-          <div class="row">
-            <div class="col-md-10">
-                <h4 class="card-title">Laporan</h4>
-            </div>
-            <div class="col-md-2">
-                <center>
-                    <button type="button" class="btn btn-primary">Tambah</button>
-                </center>
+          <div class="row">              
+            <div class="col-md-12">
+                <i class="fa fa-table m-r-10"></i>Laporan Pesanan
             </div>
           </div>
           <div class="table-responsive">
@@ -42,73 +37,82 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>JEMBUT</td>
-                        <td>KONTOL</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="checkbox" name="" value="">
-                                </span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="checkbox" name="" value="">
-                                </span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="checkbox" name="" value="">
-                                </span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="checkbox" name="" value="">
-                                </span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="checkbox" name="" value="">
-                                </span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="checkbox" name="" value="">
-                                </span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="checkbox" name="" value="">
-                                </span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="checkbox" name="" value="">
-                                </span>
-                            </div>
-                        </td>
-                        <td></td>
-                        <td>
-                            <button type="button" class="btn btn-success">Done</button>
-                        </td>
-                    </tr>
+                    @if(count($orders) > 0)
+                        @php ($no = 0)
+                        @foreach($orders as $order)
+                            <tr>
+                                <td>{{ $order->id }}</td>
+                                <td>{{ $order->nama }}</td>
+                                <td>{{ $order->no_hp }}</td>
+                                <td>{{ $order->deadline }}</td>
+                                <td>{{ $order->pembayaran }}</td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                        <input type="checkbox" id="bahan{{$order->id}}" name="" value="">
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="checkbox" id="potong{{$order->id}}" name="" value="">
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="checkbox" id="sablon{{$order->id}}" name="" value="">
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="checkbox" id="jahit{{$order->id}}" name="" value="">
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="checkbox" id="press{{$order->id}}" name="" value="">
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="checkbox" id="finishing{{$order->id}}" name="" value="">
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="checkbox" id="quality_control{{$order->id}}" name="" value="">
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="checkbox" id="konfirmasi{{$order->id}}" name="" value="">
+                                        </span>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <button type="button" class="btn btn-success">Done</button>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan=3>Tidak Ada Data</td>
+                        </tr>
+                    @endif
                     {{-- @if(count($data) > 0)
                         @php ($no = 0)
                         @foreach($data as $value)
@@ -138,11 +142,19 @@
 @endsection
 
 @section('js')
-     <!-- ============================================================== -->
-    <!-- This page plugins -->
-    <!-- ============================================================== -->
-    <!-- Flot Charts JavaScript -->
-    <script src="{{ url('/plugins/flot/jquery.flot.js') }}"></script>
-    <script src="{{ url('/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
-    <script src="{{ url('js/flot-data.js') }}"></script>
+    <script type='text/javascript'>
+        // var fuck = document.getElementById('bahan1')
+        // console.log(fuck)
+        var data = {!! json_encode($orders) !!}
+        data.forEach(el => {
+            $(`#bahan${el.id}`).prop('checked', el.bahan)
+            $(`#potong${el.id}`).prop('checked', el.potong)
+            $(`#sablon${el.id}`).prop('checked', el.sablon)
+            $(`#jahit${el.id}`).prop('checked', el.jahit)
+            $(`#press${el.id}`).prop('checked', el.press)
+            $(`#finishing${el.id}`).prop('checked', el.finishing)
+            $(`#quality_control${el.id}`).prop('checked', el.quality_control)
+            $(`#konfirmasi${el.id}`).prop('checked', el.konfirmasi)
+        })
+    </script>
 @endsection

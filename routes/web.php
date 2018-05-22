@@ -24,50 +24,56 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/admin', 'admin\DashboardController@index')->name('dashboard');
-Route::get('/admin/order', 'admin\OrderController@index')->name('order');
-Route::get('/admin/transaksi', 'admin\LaporanTransaksiController@index')->name('transaksi');
-Route::get('/admin/laporan', 'admin\LaporanPesananController@index')->name('laporan');
-Route::resource('admin/jenis_barang', 'admin\JenisBarangController');
-Route::resource('admin/barang', 'admin\BarangController');
+Route::get('/admin/order', 'OrderController@index')->name('tambahorder');
 
-Route::get('/admin/login', function (){
-    return view('pages.admin.login');
-})->name('adminlogin');
+// Function
+Route::post('/order', 'OrderController@store');
 
-Route::post('/loginadmin', 'LoginAdminController@index');
-Route::post('/transaksi', 'TransaksiController@store');
-Route::post('/transaksi/update/{id}', 'TransaksiController@update');
-Route::post('/download/{transaksi}', 'DownloadController@index');
+//Editable
 
-// Route::get('/admin', function () {
-//     return view('pages.dashboard');
-// })->name('dashboard');
+// Route::get('/admin/transaksi', 'admin\LaporanTransaksiController@index')->name('transaksi');
+// Route::get('/admin/laporan', 'admin\LaporanPesananController@index')->name('laporan');
+// Route::resource('admin/jenis_barang', 'admin\JenisBarangController');
+// Route::resource('admin/barang', 'admin\BarangController');
 
-Route::get('/home', function () {
-    return view('pages.user.home');
-})->name('home');
+// Route::get('/admin/login', function (){
+//     return view('pages.admin.login');
+// })->name('adminlogin');
 
-Route::get('/home2', function () {
-    return view('pages.user.home2');
-})->name('home');
+// Route::post('/loginadmin', 'LoginAdminController@index');
+// Route::post('/transaksi', 'TransaksiController@store');
+// Route::post('/transaksi/update/{id}', 'TransaksiController@update');
+// Route::post('/download/{transaksi}', 'DownloadController@index');
 
-Route::get('/cart', function () {
-    return view('pages.user.cart');
-})->name('cart');
+// // Route::get('/admin', function () {
+// //     return view('pages.dashboard');
+// // })->name('dashboard');
 
-Route::get('/checkout', function () {
-    return view('pages.user.checkout');
-})->name('checkout');
+// Route::get('/home', function () {
+//     return view('pages.user.home');
+// })->name('home');
 
-Route::get('/register', function () {
-    return view('pages.user.register');
-})->name('register');
+// Route::get('/home2', function () {
+//     return view('pages.user.home2');
+// })->name('home');
 
-Route::get('/product', function () {
-    return view('pages.user.product');
-})->name('product');
+// Route::get('/cart', function () {
+//     return view('pages.user.cart');
+// })->name('cart');
 
-Route::get('/productdetail', function () {
-    return view('pages.user.productdetail');
-})->name('productdetail');
+// Route::get('/checkout', function () {
+//     return view('pages.user.checkout');
+// })->name('checkout');
+
+// Route::get('/register', function () {
+//     return view('pages.user.register');
+// })->name('register');
+
+// Route::get('/product', function () {
+//     return view('pages.user.product');
+// })->name('product');
+
+// Route::get('/productdetail', function () {
+//     return view('pages.user.productdetail');
+// })->name('productdetail');
 

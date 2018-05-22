@@ -22,9 +22,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if(count($jenisbarangs) > 0)
+                    @if(count($orders) > 0)
                         @php ($no = 0)
-                        @foreach($jenisbarangs as $jenisbarang)
+                        @foreach($orders as $jenisbarang)
                             <tr>
                                 <td>{{ ++$no }}</td>
                                 <td>{{ $jenisbarang->nama }}</td>

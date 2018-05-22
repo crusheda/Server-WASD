@@ -26,15 +26,11 @@
                         <div class="form-group">
                             <label class="col-md-12">Harga Satuan</label>
                             <div class="col-md-12">
+                                {{-- <input name="harga_satuan" class="form-control form-control-line" --}}
                                 {{Form::text('harga_satuan', '', ['class' => 'form-control form-control-line', 'placeholder' => 'Harga Satuan'])}}
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-12">Gambar</label>
-                            <div class="col-md-12">
-                                {{Form::file('image')}}
-                            </div>
-                        </div>
+                        
                         <div class="form-group">
                             <label class="col-md-12">Deskripsi</label>
                             <div class="col-md-12">
