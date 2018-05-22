@@ -49,56 +49,56 @@
                                 <td>
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                        <input type="checkbox" id="bahan{{$order->id}}" name="" value="">
+                                        <input type="checkbox" id="bahan{{$order->id}}" name="" value="" onchange="setBahan({{ $order->id }}, this)">
                                         </span>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" id="potong{{$order->id}}" name="" value="">
+                                            <input type="checkbox" id="potong{{$order->id}}" name="" value="" onchange="setPotong({{ $order->id }}, this)">
                                         </span>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" id="sablon{{$order->id}}" name="" value="">
+                                            <input type="checkbox" id="sablon{{$order->id}}" name="" value="" onchange="setSablon({{ $order->id }}, this)">
                                         </span>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" id="jahit{{$order->id}}" name="" value="">
+                                            <input type="checkbox" id="jahit{{$order->id}}" name="" value="" onchange="setJahit({{ $order->id }}, this)">
                                         </span>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" id="press{{$order->id}}" name="" value="">
+                                            <input type="checkbox" id="press{{$order->id}}" name="" value="" onchange="setPress({{ $order->id }}, this)">
                                         </span>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" id="finishing{{$order->id}}" name="" value="">
+                                            <input type="checkbox" id="finishing{{$order->id}}" name="" value="" onchange="setFinish({{ $order->id }}, this)">
                                         </span>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" id="quality_control{{$order->id}}" name="" value="">
+                                            <input type="checkbox" id="quality_control{{$order->id}}" name="" value="" onchange="setQc({{ $order->id }}, this)">
                                         </span>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <input type="checkbox" id="konfirmasi{{$order->id}}" name="" value="">
+                                            <input type="checkbox" id="konfirmasi{{$order->id}}" name="" value="" onchange="setKonfirmasi({{ $order->id }}, this)">
                                         </span>
                                     </div>
                                 </td>
@@ -157,5 +157,158 @@
             $(`#quality_control${el.id}`).prop('checked', el.quality_control)
             $(`#konfirmasi${el.id}`).prop('checked', el.konfirmasi)
         })
+    </script>
+    <script>
+        function setBahan(id, el) {
+            $.ajax({
+                url : 'http://localhost:8000/api/bahan',
+                type : 'POST',
+                data : {
+                    'id' : id,
+                    'value': el.checked
+                },
+                dataType:'json',
+                success : function(data) {              
+                    console.log(data)
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request) + " " + error)
+                }
+            })
+        }
+
+        function setPotong(id, el) {
+            $.ajax({
+                url : 'http://localhost:8000/api/potong',
+                type : 'POST',
+                data : {
+                    'id' : id,
+                    'value': el.checked
+                },
+                dataType:'json',
+                success : function(data) {              
+                    console.log(data)
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request) + " " + error)
+                }
+            })
+        }
+
+        function setSablon(id, el) {
+            $.ajax({
+                url : 'http://localhost:8000/api/sablon',
+                type : 'POST',
+                data : {
+                    'id' : id,
+                    'value': el.checked
+                },
+                dataType:'json',
+                success : function(data) {              
+                    console.log(data)
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request) + " " + error)
+                }
+            })
+        }
+
+        function setJahit(id, el) {
+            $.ajax({
+                url : 'http://localhost:8000/api/jahit',
+                type : 'POST',
+                data : {
+                    'id' : id,
+                    'value': el.checked
+                },
+                dataType:'json',
+                success : function(data) {              
+                    console.log(data)
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request) + " " + error)
+                }
+            })
+        }
+
+        function setPress(id, el) {
+            $.ajax({
+                url : 'http://localhost:8000/api/press',
+                type : 'POST',
+                data : {
+                    'id' : id,
+                    'value': el.checked
+                },
+                dataType:'json',
+                success : function(data) {              
+                    console.log(data)
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request) + " " + error)
+                }
+            })
+        }
+
+        function setFinish(id, el) {
+            $.ajax({
+                url : 'http://localhost:8000/api/finishing',
+                type : 'POST',
+                data : {
+                    'id' : id,
+                    'value': el.checked
+                },
+                dataType:'json',
+                success : function(data) {              
+                    console.log(data)
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request) + " " + error)
+                }
+            })
+        }
+
+        function setQc(id, el) {
+            $.ajax({
+                url : 'http://localhost:8000/api/quality_control',
+                type : 'POST',
+                data : {
+                    'id' : id,
+                    'value': el.checked
+                },
+                dataType:'json',
+                success : function(data) {              
+                    console.log(data)
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request) + " " + error)
+                }
+            })
+        }
+
+        function setKonfirmasi(id, el) {
+            $.ajax({
+                url : 'http://localhost:8000/api/konfirmasi',
+                type : 'POST',
+                data : {
+                    'id' : id,
+                    'value': el.checked
+                },
+                dataType:'json',
+                success : function(data) {              
+                    console.log(data)
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request) + " " + error)
+                }
+            })
+        }
     </script>
 @endsection

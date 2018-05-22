@@ -14,7 +14,7 @@
 					{!! Form::close() !!}			
 				</div><!-- /col-lg-6 -->
 				<div class="col-lg-6">
-					<img class="img-responsive" src="{{ url('uitrack/img/ipad-hand.png') }}" alt="">
+					<img class="img-responsive" src="{{ url('uitrack/img/img_bg.png') }}" alt="">
 				</div><!-- /col-lg-6 -->
 				
 			</div><!-- /row -->

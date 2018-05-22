@@ -18,3 +18,10 @@ use Illuminate\Http\Request;
 // });
 
 Route::post('/bahan', 'OrderController@updateBahan');
+Route::post('/potong', 'OrderController@updatePotong');
+Route::post('/sablon', 'OrderController@updateSablon');
+Route::post('/jahit', 'OrderController@updateJahit');
+Route::post('/press', 'OrderController@updatePress');
+Route::post('/finishing', 'OrderController@updateFinish');
+Route::post('/quality_control', 'OrderController@updateQc');
+Route::post('/konfirmasi', 'OrderController@updateKonfirmasi');

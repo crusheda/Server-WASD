@@ -84,19 +84,22 @@
                 <a href="{{ route('tambahorder') }}" class="waves-effect"><i class="fa fa-cloud-upload m-r-10" aria-hidden="true"></i>Tambah Pesanan</a>
               </li>
               {{-- <li>
-                <a href="{{ route('laporan') }}" class="waves-effect"><i class="fa fa-shopping-cart m-r-10" aria-hidden="true"></i>Laporan Pesanan</a>
+                <a href="" class="waves-effect"><i class="fa fa-shopping-cart m-r-10" aria-hidden="true"></i>Laporan Pesanan</a>
               </li>
               <li>
-                <a href="{{ route('transaksi') }}" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Transaksi</a>
+                <a href="" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Transaksi</a>
               </li>
               <li>
-                <a href="{{ route('barang.index') }}" class="waves-effect"><i class="fa fa-cube m-r-10" aria-hidden="true"></i>Barang</a>
+                <a href="" class="waves-effect"><i class="fa fa-cube m-r-10" aria-hidden="true"></i>Barang</a>
               </li>
               <li>
-                <a href="{{ route('jenis_barang.index') }}" class="waves-effect"><i class="fa fa-cubes m-r-10" aria-hidden="true"></i>Jenis Barang</a>
+                <a href="" class="waves-effect"><i class="fa fa-cubes m-r-10" aria-hidden="true"></i>Jenis Barang</a>
               </li> --}}
-              <center><button class="btn btn-warning" href="{{ url('/logout') }}" style="bottom:0%;width:150px">Logout</button></center>
-            </ul>              
+              <li>
+                    <a href="{{ url('logout') }}"><i class="fa fa-cube m-r-10" aria-hidden="true"></i>Logout</a>
+                {{-- <button class="btn btn-warning" href="{{ url('logout') }}" style="position:fixed;bottom:5%;left:3%;right:3%;width:150px">Logout</button> --}}
+              </li>
+            </ul>          
           </nav>
           <!-- End Sidebar navigation -->
         </div>
