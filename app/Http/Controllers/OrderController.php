@@ -89,7 +89,7 @@ class OrderController extends Controller
     {
         $data = Order::find($request->id);
         $data->quality_control = $request->value;
-        $data->save();s
+        $data->save();
         return response()->json(['status' => true, 'quality_control' => $data->id, 'message' => 'Status quality_control updated ' . $data->quality_control]);
     }
 
