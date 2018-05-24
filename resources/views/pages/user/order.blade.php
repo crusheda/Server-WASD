@@ -5,7 +5,7 @@
         <div class="col-lg-6 col-lg-offset-3">
             <br>
             <h1>Tracking Your Order</h1>
-            <h4>Your Order with Tracking Number : <a href="">999999</a></h4>
+            <h4>Your Order with Tracking Number : <a href="">{{ $data->id }}</a></h4>
         </div>
     </div>
     
@@ -32,14 +32,14 @@
                     <hr>
                     <div class="row mt centered">
                         <div class="col-lg-6">
-                           <b>Pemesan :</b> <br> Suroto
+                           <b>Pemesan :</b> <br> {{$data->nama}}
                         </div>
                         <div class="col-lg-6">
-                           <b>Dateline :</b> <br> 22/10/2010, 22:00 WIB
+                           <b>Dateline :</b> <br> {{$data->deadline}}
                         </div>
                     </div> 
                     <hr>
-                    <button class="btn btn-primary" style="pointer-events: none;width:100%" type="button" disabled>ON PROGRESS</button>                                      
+                    <button class="btn btn-primary" id="btnproses" style="pointer-events: none;width:100%" type="button" disabled>ON PROGRESS</button>                                      
                 </div>
             </div>            
         </div>
@@ -64,25 +64,25 @@
                     <tbody>
                         <tr>
                             <td>
-                                <input type="checkbox" name="" value="" disabled>
+                                <input id="bahan" type="checkbox" name="" value="" disabled>
                             </td>
                             <td>
-                                <input type="checkbox" name="" value="" disabled>
+                                <input id="potong" type="checkbox" name="" value="" disabled>
                             </td>
                             <td>
-                                <input type="checkbox" name="" value="" disabled>
+                                <input id="sablon" type="checkbox" name="" value="" disabled>
                             </td>
                             <td>
-                                <input type="checkbox" name="" value="" disabled>
+                                <input id="jahit" type="checkbox" name="" value="" disabled>
                             </td>
                             <td>
-                                <input type="checkbox" name="" value="" disabled>
+                                <input id="press" type="checkbox" name="" value="" disabled>
                             </td>
                             <td>
-                                <input type="checkbox" name="" value="" disabled>
+                                <input id="finishing" type="checkbox" name="" value="" disabled>
                             </td>
                             <td>
-                                <input type="checkbox" name="" value="" disabled>
+                                <input id="quality_control" type="checkbox" name="" value="" disabled>
                             </td>                                                    
                         </tr>
                     </tbody>     
@@ -99,11 +99,28 @@
                 <center><h4>Keterangan Pesanan</h4></center>
                 <hr>
                     <div class="form-group">
-                        <textarea style="width:100%" class="form-control" id="" rows="3" disabled></textarea>
+                        <textarea style="width:100%" class="form-control" id="" rows="3" disabled>{{$data->keterangan}}</textarea>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type='text/javascript'>
+    var data = {!! json_encode($data) !!}
+    console.log(data)
+    $('#bahan').prop('checked', data.bahan)
+    $('#potong').prop('checked', data.potong)
+    $('#sablon').prop('checked', data.sablon)
+    $('#jahit').prop('checked', data.jahit)
+    $('#press').prop('checked', data.press)
+    $('#finishing').prop('checked', data.finishing)
+    $('#quality_control').prop('checked', data.quality_control)
+    $('#konfirmasi').prop('checked', data.konfirmasi)
+    if (data.ambil) {
+        $("#btnproses").attr('class', 'btn btn-success')
+        $("#btnproses").html('ANDA SUDAH AMBIL')
+    }
+</script>
 @endsection

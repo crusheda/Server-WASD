@@ -34,7 +34,7 @@
                     <div class="form-group">
                         <label>Keterangan</label>
                         {{-- <textarea class="form-control" rows="3"></textarea> --}}
-                        {{-- {{Form::textarea('deskripsi', '', ['class' => 'form-control', 'placeholder' => '','rows' => '3'])}} --}}
+                        {{Form::textarea('keterangan', '', ['class' => 'form-control', 'placeholder' => '','rows' => '3'])}}
                     </div>
                     <center>{{Form::submit('submit', ['class' => 'btn btn-info'])}}</center>                    
                 {!! Form::close() !!}

@@ -6,11 +6,15 @@
 				<div class="col-lg-6">
 					<h1>Track Your Order<br/>
 					Immediately</h1>					
-					{!! Form::open(['action' => 'OrderController@detail', 'method' => 'POST', 'class' => 'form-inline', 'role' => 'form']) !!}
+					{!! Form::open(['action' => 'OrderController@track', 'method' => 'POST', 'class' => 'form-inline', 'role' => 'form']) !!}
+					{{-- <form action="OrderController@track" method="POST" class="form-inline" role="form">	 --}}
 						<div class="form-group">
-							<input type="text" class="form-control" name="kodetrack" placeholder="Enter Your Tracking Number">
+							{{-- <input type="text" class="form-control" name="kodetrack" placeholder="Enter Your Tracking Number"> --}}
+							{{Form::text('kodetrack', '', ['class' => 'form-control', 'placeholder' => 'Enter Your Tracking Number'])}}
 						</div>
-						<button type="submit" class="btn btn-warning btn-lg">Track Now</button>
+						{{-- <button type="submit" class="btn btn-warning btn-lg"></button> --}}
+						{{Form::submit('Track Now', ['class' => 'btn btn-warning btn-lg'])}}
+					{{-- </form> --}}
 					{!! Form::close() !!}			
 				</div><!-- /col-lg-6 -->
 				<div class="col-lg-6">

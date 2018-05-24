@@ -102,9 +102,20 @@
                                         </span>
                                     </div>
                                 </td>
-                                <td></td>
                                 <td>
-                                    <button type="button" class="btn btn-success">Done</button>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="textarea" id="keterangan{{$order->id}}" name="" value="{{$order->keterangan}}" disabled>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                
+                                    {{-- <button type="button" class="btn btn-success">Done</button> --}}
+                                    {!! Form::open(['action' => ['OrderController@done'], 'method' => 'POST', 'style' => 'display: inline']) !!}
+                                        {{Form::hidden('id', $order->id)}}
+                                        {{ Form::submit('Ambil', ['class' => 'btn btn-success']) }}
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endforeach
@@ -134,7 +145,6 @@
                     @endif --}}
                 </tbody>
             </table>
-            <a href="{{ url('logout') }}">TESTING</a>
           </div>
         </div>
       </div>

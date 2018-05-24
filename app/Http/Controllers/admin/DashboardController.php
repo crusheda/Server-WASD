@@ -12,7 +12,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $data = Order::orderBy('id', 'ASC')->get();
+        $data = Order::where('ambil', false)->orderBy('id', 'ASC')->get();
         return view('pages.admin.dashboard')->with('orders', $data);
        
     }

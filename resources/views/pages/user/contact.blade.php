@@ -8,30 +8,6 @@
             </div>
         </div>
 
-        <div class="jumbotron">
-            <form action="">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" id="" placeholder="name@example.com" style="width:100%">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label>Nama Pemesan</label>
-                            <input type="text" class="form-control" id="" placeholder="Your Name" style="width:100%">
-                        </div>
-                    </div>  
-                </div>
-                
-                <div class="form-group">
-                    <textarea class="form-control" id="" placeholder="Your Problems..." style="width:100%"></textarea>
-                </div>
-                <center><button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button></center>
-            </form>
-        </div>
-
         <hr>
 
         <div class="jumbotron">
@@ -46,7 +22,7 @@
                         <p>
                             <strong>Phone:</strong>&nbsp;+62823-7507-xxxx<br>
                             <strong>Fax:</strong>&nbsp;+62823-7507-xxxx<br>
-                            <strong>Email:</strong>&nbsp;<a href="#">KNTL@WASD.com</a>					
+                            <strong>Email:</strong>&nbsp;<a href="#">Admin1@WASD.com</a>					
                         </p>
                     </div>
                 </div>
@@ -58,7 +34,7 @@
                         <p>
                             <strong>Phone:</strong>&nbsp;+62823-7507-xxxx<br>
                             <strong>Fax:</strong>&nbsp;+62823-7507-xxxx<br>
-                            <strong>Email:</strong>&nbsp;<a href="#">JNCK@WASD.com</a>					
+                            <strong>Email:</strong>&nbsp;<a href="#">Admin2@WASD.com</a>					
                         </p>
                     </div>
                 </div>
