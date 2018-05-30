@@ -60,11 +60,13 @@
             <!-- ============================================================== -->
             <!-- User profile and search -->
             <!-- ============================================================== -->
-            {{--  <ul class="navbar-nav my-lg-0">
+             <ul class="navbar-nav my-lg-0">
               <li class="navbar navbar-item dropdown">
-                 <a class="nav-link dropdown-toggle text-muted waves-effect white"><img src="{{ url('/img/users/wasd.png') }}" alt="user" class="profile-pic m-r-5" />Admin WASD Clothing</a>
+                
+                <a class="text-white">Hello, {{ Auth::user()->name }}</a>
+                
               </li>
-            </ul>  --}}
+            </ul> 
           </div>
         </nav>
       </header>
@@ -81,21 +83,11 @@
               <li>
                 <a href="{{ route('tambahorder') }}" class="waves-effect"><i class="fa fa-cloud-upload m-r-10" aria-hidden="true"></i>Tambah Pesanan</a>
               </li>
-              {{-- <li>
-                <a href="" class="waves-effect"><i class="fa fa-shopping-cart m-r-10" aria-hidden="true"></i>Laporan Pesanan</a>
-              </li>
               <li>
-                <a href="" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Transaksi</a>
-              </li>
-              <li>
-                <a href="" class="waves-effect"><i class="fa fa-cube m-r-10" aria-hidden="true"></i>Barang</a>
-              </li>
-              <li>
-                <a href="" class="waves-effect"><i class="fa fa-cubes m-r-10" aria-hidden="true"></i>Jenis Barang</a>
-              </li> --}}
-              <li>
-                    <a href="{{ url('logout') }}"><i class="fa fa-cube m-r-10" aria-hidden="true"></i>Logout</a>
-                {{-- <button class="btn btn-warning" href="{{ url('logout') }}" style="position:fixed;bottom:5%;left:3%;right:3%;width:150px">Logout</button> --}}
+                <a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-cube m-r-10" aria-hidden="true"></i>Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
               </li>
             </ul>          
           </nav>

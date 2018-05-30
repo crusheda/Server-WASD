@@ -19,7 +19,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                      <th>No.Orde</th>
+                      <th>No.Order</th>
                       <th>Nama</th>
                       <th>No.Hp</th>
                       <th>Dateline</th>

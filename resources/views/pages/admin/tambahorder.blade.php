@@ -19,7 +19,7 @@
                     <div class="form-group">
                         <label>No.HP</label>
                         {{-- <input type="text" class="form-control" id=""> --}}
-                        {{Form::text('no_hp', '', ['class' => 'form-control', 'placeholder' => ''])}}
+                        {{Form::text('no_hp', '', ['class' => 'form-control','maxlength' => '13', 'placeholder' => ''])}}
                     </div>
                     <div class="form-group">
                         <label>Dateline</label>
@@ -29,7 +29,7 @@
                     <div class="form-group">
                         <label>Pembayaran</label>
                         {{-- <input type="text" class="form-control" id=""> --}}
-                        {{Form::text('pembayaran', '', ['class' => 'form-control', 'placeholder' => ''])}}
+                        {{Form::text('pembayaran', '', ['class' => 'form-control', 'maxlength' => '9', 'placeholder' => ''])}}
                     </div>
                     <div class="form-group">
                         <label>Keterangan</label>

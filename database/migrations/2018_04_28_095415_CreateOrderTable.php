@@ -16,7 +16,7 @@ class CreateOrderTable extends Migration
         Schema::create('order', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama', 100);
-            $table->integer('no_hp');
+            $table->string('no_hp', 20);
             $table->date('deadline');
             $table->integer('pembayaran');
             $table->boolean('bahan');

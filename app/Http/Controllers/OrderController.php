@@ -21,7 +21,7 @@ class OrderController extends Controller
     {
         $data = new Order;
         $data->nama = $request->nama;
-        $data->no_hp = intval($request->no_hp);
+        $data->no_hp = $request->no_hp;
         $data->deadline = $request->deadline;
         $data->pembayaran = intval($request->pembayaran);
         $data->keterangan = $request->keterangan;
