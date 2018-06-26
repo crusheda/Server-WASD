@@ -136,7 +136,13 @@ class OrderController extends Controller
 		// $name = \App\Order::where('id', 'LIKE', '%'.$input.'%')->get();
         // return view('tampilorder', compact('name'));
         $data = Order::find($request->kodetrack);
-        $result = ['data' => $data];
-        return view('pages.user.order', $result);
+        if (empty($data)) {
+            return redirect(route('track'))->with('nothing', 'Nomor Tracking Tidak Ditemukan.');
+        } else {
+            $result = ['data' => $data];
+            return view('pages.user.order', $result);
+        }
+        
+       
     }
 }

@@ -24,4 +24,19 @@
 			</div><!-- /row -->
 		</div><!-- /container -->
 	</div>
+
+	@if (session("nothing"))
+	<script>
+		$(document).ready(function() {
+			$('#alert').modal('show');
+		});
+	</script>
+	@endif
+	<div id="alert" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+			<center>{{ session("nothing")}}</center>
+			</div>
+		</div>
+	</div>
 @endsection

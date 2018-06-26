@@ -24,11 +24,11 @@
             <div class="thumbnail">
                     <img src="{{ url('/img/img_produk.jpg') }}" width="150" height="350" alt="">
                 <div class="caption">
-                    <div class="progress">
+                    {{-- <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
                             60%
                         </div>
-                    </div>
+                    </div> --}}
                     <hr>
                     <div class="row mt centered">
                         <div class="col-lg-6">

@@ -1,62 +1,111 @@
 @extends('layouts.admin')
 
-@section('breadcrump', 'Dashboard')
+@section('breadcrump', 'Detail Order')
 
 @section('action')
 @endsection
 
 @section('content')
-<div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-block">
-          <div class="row">              
-            <div class="col-md-12">
-                <i class="fa fa-table m-r-10"></i>Laporan Pesanan
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-block">
+                    <label><b>No.Order : </b>{{ $order->id }} </label>
+                    <hr>
+                    <a><b>Nama        : </b>{{ $order->nama }}</a><br>
+                    <a><b>No. HP      : </b>{{ $order->no_hp }}</a><br>
+                    <a><b>Deadline    : </b>{{ $order->deadline }}</a><br>
+                    <a><b>Pembayaran  : </b>{{ $order->pembayaran }}</a><br>
+                </div>
             </div>
-          </div>
-          <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                      <th>No.Order</th>
-                      <th>Nama</th>
-                      <th>No.Hp</th>
-                      <th>Dateline</th>
-                      <th>Pembayaran</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if(count($orders) > 0)
-                        @php ($no = 0)
-                        @foreach($orders as $order)
-                            <tr>
-                                <td><a href="{{ route('admin.detail', $order->id) }}"><b>{{ $order->id }}</b></a></td>
-                                <td>{{ $order->nama }}</td>
-                                <td>{{ $order->no_hp }}</td>
-                                <td>{{ $order->deadline }}</td>
-                                <td>{{ $order->pembayaran }}</td>                                
-                            </tr>
-                        @endforeach
-                    @else
-                        <tr>
-                            <td colspan=3>Tidak Ada Barang Masuk</td>
-                        </tr>
-                    @endif
-                </tbody>
-            </table>
-          </div>
         </div>
-      </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-block">
+                    <center><a>Status Barang</a><center><hr>                       
+                        {!! Form::open(['action' => ['OrderController@done'], 'method' => 'POST', 'style' => 'display: inline']) !!}
+                        {{Form::hidden('id', $order->id)}}
+                        {{ Form::submit('Ambil Barang', ['class' => 'btn btn-danger']) }}
+                    {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-1">
+                            <a>Bahan</a><hr>
+                            <div class="input-group">
+                                <input type="checkbox" style="width:80px;height:80px" id="bahan{{$order->id}}" name="" value="" onchange="setBahan({{ $order->id }}, this)">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <a>Potong</a><br><hr>
+                            <div class="input-group">
+                                    <input type="checkbox" style="width:80px;height:80px" id="potong{{$order->id}}" name="" value="" onchange="setPotong({{ $order->id }}, this)">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <a>Sablon</a><br><hr>
+                            <div class="input-group">
+                                    <input type="checkbox" style="width:80px;height:80px" id="sablon{{$order->id}}" name="" value="" onchange="setSablon({{ $order->id }}, this)">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <a>Jahit</a><br><hr>
+                            <div class="input-group">
+                                    <input type="checkbox" style="width:80px;height:80px" id="jahit{{$order->id}}" name="" value="" onchange="setJahit({{ $order->id }}, this)">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <a>Press</a><br><hr>
+                            <div class="input-group">
+                                    <input type="checkbox" style="width:80px;height:80px" id="press{{$order->id}}" name="" value="" onchange="setPress({{ $order->id }}, this)">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <a>Finishing</a><br><hr>
+                            <div class="input-group">
+                                    <input type="checkbox" style="width:80px;height:80px" id="finishing{{$order->id}}" name="" value="" onchange="setFinish({{ $order->id }}, this)">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <a>QC</a><br><hr>
+                            <div class="input-group">
+                                    <input type="checkbox" style="width:80px;height:80px" id="quality_control{{$order->id}}" name="" value="" onchange="setQc({{ $order->id }}, this)">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <a>Konfirmasi</a><br><hr>
+                            <div class="input-group">
+                                    <input type="checkbox" style="width:80px;height:80px" id="konfirmasi{{$order->id}}" name="" value="" onchange="setKonfirmasi({{ $order->id }}, this)">
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-block">
+                    <a>Keterangan</a><br>
+                    <div class="form-group">
+                        <textarea style="width:100%" class="form-control" id="" rows="3" disabled>{{$order->keterangan}}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
 
-@section('js')
+@section('js')  
     <script type='text/javascript'>
-        // var fuck = document.getElementById('bahan1')
-        // console.log(fuck)
-        var data = {!! json_encode($orders) !!}
+        var data = {!! json_encode($order) !!}
         data.forEach(el => {
             $(`#bahan${el.id}`).prop('checked', el.bahan)
             $(`#potong${el.id}`).prop('checked', el.potong)

@@ -25,4 +25,11 @@ class DashboardController extends Controller
         // redirect to homepage
         return redirect('/');
     }
+
+    public function getid($id_order)
+    {
+        # code...
+        $data = order::find($id_order);
+        return view('pages.admin.detail')->with('order' ,$data);
+    }
 }

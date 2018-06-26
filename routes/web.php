@@ -26,6 +26,8 @@ Route::middleware('auth')->group(function (){
     Route::get('/admin', 'admin\DashboardController@index')->name('dashboard');
     Route::get('/admin/order', 'OrderController@index')->name('tambahorder');
     Route::get('/logout', 'admin\DashboardController@logout')->name('logout');
+    Route::get('ceo/detail/{id_order}', 'CEOController@getid')->name('ceo.detail');
+    Route::get('admin/detail/{id_order}', 'admin\DashboardController@getid')->name('admin.detail');
     // Route::get('/order', 'OrderController@detail');
 
     // Function POST
@@ -34,6 +36,9 @@ Route::middleware('auth')->group(function (){
     Route::post('/', 'OrderController@detail');
 
     Route::post('/ambil', 'OrderController@done');
+
+    //CEO
+    Route::get('/ceo', 'CEOController@index')->name('ceo');
 });
 
 Route::get('/admin/login', function (){
@@ -53,3 +58,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 // Stop Login
+
+// Editable
